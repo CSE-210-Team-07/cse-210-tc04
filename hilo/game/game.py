@@ -1,6 +1,6 @@
 import random
-from typing import Coroutine
-class game:
+
+class Game:
 	def __init__(self):
 		self.oldCard = random.randint(1,13)
 		self.score = 0
@@ -14,9 +14,9 @@ class game:
 	def test_guess(self, guess):
 		correct = False
 		newCard = random.randint(1,13)
-		if guess == 'h' and newCard > self.oldCard:
+		if guess == 'h' and newCard >= self.oldCard:
 			correct = True
-		elif guess == 'l' and newCard < self.oldCard:
+		elif guess == 'l' and newCard <= self.oldCard:
 			correct = True
 		
 		self.oldCard = newCard
