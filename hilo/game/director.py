@@ -27,12 +27,14 @@ class Director:
 		Args:
 			self (Director): an instance of Director.
 		"""
-		print("The current card has a value of " + str(self.game.get_card()))
-		print("Will the next card be hogher or lower?")
+		
+		
 		while self.keep_playing:
+			print("The current card has a value of " + str(self.game.get_card()))
 			guess = self.get_inputs()
 			correct = self.do_updates(guess)
 			self.do_outputs(correct)
+			
 
 	def get_inputs(self):
 		"""Gets the inputs at the beginning of each round of play. In this case,
@@ -75,8 +77,10 @@ class Director:
 		
 		if(correct):
 			print("Correct!")
+			print("The card was a " + str(self.game.get_card()))
 		else:
 			print("Wrong!")
+			print("The card was a " + str(self.game.get_card()))
 		
 		if not self.game.keep_playing():
 			print("Your score dropped below 1\nGame Over!")
